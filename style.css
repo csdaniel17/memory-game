@@ -11,8 +11,12 @@ h1 {
   margin: 50px auto 20px;
 }
 
-p {
+.moves {
   margin: 20px auto;
+}
+
+#game-over {
+  display: none;
 }
 
 #grid {
@@ -39,4 +43,8 @@ p {
 
 .tile.match img {
   visibility: visible;
+}
+
+.new-game {
+  clear: both;
 }

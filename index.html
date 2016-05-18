@@ -7,9 +7,10 @@
   </head>
   <body>
     <h1>monster memory game</h1>
-    <div class="moves"><p>moves:</p></div>
+    <div id="game-over">congratulations you won!</div>
+    <div class="moves">moves: <span id="num-moves"></span></div>
 
-    <div class="message"></div>
+
     <div id="grid">
 
       <div class="tile">
@@ -25,17 +26,21 @@
         <img class="monster" src="images/monsters-04.png" alt="monster4" />
       </div>
       <div class="tile">
-        <img class="monster" src="images/monsters-01.png" alt="monster1" />
-      </div>
-      <div class="tile">
-        <img class="monster" src="images/monsters-02.png" alt="monster2" />
-      </div>
-      <div class="tile">
         <img class="monster" src="images/monsters-03.png" alt="monster3" />
       </div>
       <div class="tile">
         <img class="monster" src="images/monsters-04.png" alt="monster4" />
       </div>
+      <div class="tile">
+        <img class="monster" src="images/monsters-01.png" alt="monster1" />
+      </div>
+      <div class="tile">
+        <img class="monster" src="images/monsters-02.png" alt="monster2" />
+      </div>
+    </div>
+
+    <div class="new-game">
+      <button id="new">reset game</button>
     </div>
 
   <script src="jquery.js"></script>
