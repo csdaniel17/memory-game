@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  color: #666666;
+  text-align: center;
+}
+
+h1 {
+  margin: 50px auto 20px;
+}
+
+p {
+  margin: 20px auto;
+}
+
+#grid {
+  width: 75%;
+  margin: auto;
+}
+
+.tile {
+  float: left;
+  width: 23%;
+  margin: 1%;
+  border: 1px solid black;
+}
+
+.tile img {
+  width: 100%;
+  display: block;
+  visibility: hidden;
+}
+
+.tile.open img {
+  visibility: visible;
+}
