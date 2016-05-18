@@ -48,3 +48,9 @@ h1 {
 .new-game {
   clear: both;
 }
+.new-game button {
+  margin: 20px auto;
+  width: 120px;
+  height: 40px;
+  font-size: 1em;
+}

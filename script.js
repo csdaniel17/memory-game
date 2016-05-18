@@ -16,14 +16,14 @@ $(function () {
       card2 = $(this).find("img").attr("src");
       state = "first";
       //count moves
-      count += 1;
+      count++;
       //display moves after two clicks
       $("#num-moves").text(count);
       //set timeout to flip cards back over after if not match
       if (card1 != card2) {
         setTimeout(function () {
           $(".tile").removeClass("open");
-        }, 800);
+        }, 500);
       } else {
         //if they are a match, add class "match" and remove "open"
         $(".open").addClass("match");
