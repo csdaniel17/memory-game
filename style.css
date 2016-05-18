@@ -28,9 +28,9 @@ h1 {
   float: left;
   width: 23%;
   margin: 1%;
-  border: 1px solid black;
-  background-color: #f2f2f2;
-  /*background: url(images/logo-bw.png);
+  position: relative;
+  /*background-color: #f2f2f2;
+  background: url(images/logo-bw.png);
   background-repeat: no-repeat;
   background-position: center;*/
 }
@@ -38,17 +38,35 @@ h1 {
 .tile img {
   width: 100%;
   display: block;
-  visibility: hidden;
+  /*visibility: hidden;*/
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+  border: 1px solid black;
 }
 
-.tile.open img {
-  visibility: visible;
-  background-color: white;
+.tile .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(images/logo-bw.png) center center no-repeat #eee;
+  transition: transform 0.5s;
+  border: 1px solid black;
 }
 
-.tile.match img {
-  visibility: visible;
-  background-color: white;
+.tile.open .back, .tile.match .back {
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+  /*visibility: visible;
+  background-color: white;*/
+}
+
+.tile.open img, .tile.match img {
+  transform: rotateY(0deg);
+  /*visibility: visible;
+  background-color: white;*/
 }
 
 .new-game {
