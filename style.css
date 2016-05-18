@@ -36,3 +36,7 @@ p {
 .tile.open img {
   visibility: visible;
 }
+
+.tile.match img {
+  visibility: visible;
+}
