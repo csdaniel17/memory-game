@@ -6,14 +6,18 @@ var card2;
 //debugger
 $(function () {
   $(".tile").click(function () {
-    //flip card when clicked
-    $(this).addClass("open");
-    //find card src
+
+    if ($(this).hasClass("open")) {
+      return;
+    }
+    //find card src and flip card when clicked
     if (state === "first") {
       card1 = $(this).find("img").attr("src");
+      $(this).addClass("open");
       state = "second";
     } else if (state === "second") {
       card2 = $(this).find("img").attr("src");
+      $(this).addClass("open");
       state = "first";
       //count moves
       count++;
