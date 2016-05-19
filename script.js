@@ -3,6 +3,33 @@ var state = "first";
 var count = 0;
 var card1;
 var card2;
+
+//shuffle cards
+function shuffle(arr) {
+  var index = arr.length;
+  var temp;
+  var randomIndex;
+  while (0 != index) {
+    index -= 1;
+    randomIndex = Math.floor(Math.random() * index);
+    temp = arr[index];
+    arr[index] = arr[randomIndex];
+    arr[randomIndex] = arr[index];
+  }
+  return arr;
+}
+
+var arr = [
+  '<img class="monster" src="images/monsters-01.png" alt="monster1" />',
+  '<img class="monster" src="images/monsters-01.png" alt="monster1" />',
+  '<img class="monster" src="images/monsters-02.png" alt="monster2" />',
+  '<img class="monster" src="images/monsters-02.png" alt="monster2" />',
+  '<img class="monster" src="images/monsters-03.png" alt="monster3" />',
+  '<img class="monster" src="images/monsters-03.png" alt="monster3" />',
+  '<img class="monster" src="images/monsters-04.png" alt="monster4" />',
+  '<img class="monster" src="images/monsters-04.png" alt="monster4" />',
+];
+
 //debugger
 $(function () {
   $(".tile").click(function () {
