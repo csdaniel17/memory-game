@@ -1,1 +1,1 @@
-This is a memory card game.
+This is a monster memory card game using jQuery.
