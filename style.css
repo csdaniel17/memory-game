@@ -6,6 +6,9 @@
   color: #666666;
   text-align: center;
 }
+body {
+  background: url(redox_02.png);
+}
 
 h1 {
   margin: 50px auto 20px;
@@ -29,16 +32,12 @@ h1 {
   width: 23%;
   margin: 1%;
   position: relative;
-  /*background-color: #f2f2f2;
-  background: url(images/logo-bw.png);
-  background-repeat: no-repeat;
-  background-position: center;*/
 }
 
 .tile img {
   width: 100%;
   display: block;
-  /*visibility: hidden;*/
+  background-color: white;
   transform: rotateY(-180deg);
   backface-visibility: hidden;
   transition: transform 0.5s;
@@ -59,14 +58,10 @@ h1 {
 .tile.open .back, .tile.match .back {
   transform: rotateY(-180deg);
   backface-visibility: hidden;
-  /*visibility: visible;
-  background-color: white;*/
 }
 
 .tile.open img, .tile.match img {
   transform: rotateY(0deg);
-  /*visibility: visible;
-  background-color: white;*/
 }
 
 .new-game {
@@ -77,4 +72,5 @@ h1 {
   width: 120px;
   height: 40px;
   font-size: 1em;
+  background-color: white;
 }
