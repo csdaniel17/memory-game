@@ -3,37 +3,42 @@ var state = "first";
 var count = 0;
 var card1;
 var card2;
+$(function () {
+//function to shuffle cards
+var pictures = _.shuffle([
+  'monsters-01.png',
+  'monsters-02.png',
+  'monsters-03.png',
+  'monsters-04.png',
+  'monsters-05.png',
+  'monsters-06.png',
+  'monsters-07.png',
+  'monsters-08.png',
+  'monsters-09.png',
+  'monsters-10.png',
+  'monsters-11.png',
+  'monsters-12.png',
+  'monsters-13.png',
+  'monsters-14.png',
+  'monsters-15.png',
+  'monsters-16.png'
+]);
 
-//shuffle cards
-function shuffle(arr) {
-  var index = arr.length;
-  var temp;
-  var randomIndex;
-  while (0 != index) {
-    index -= 1;
-    randomIndex = Math.floor(Math.random() * index);
-    temp = arr[index];
-    arr[index] = arr[randomIndex];
-    arr[randomIndex] = arr[index];
-  }
-  return arr;
-}
+var fourPics = [];
+fourPics = pictures.slice(0, 4);
 
-var arr = [
-  '<img class="monster" src="images/monsters-01.png" alt="monster1" />',
-  '<img class="monster" src="images/monsters-01.png" alt="monster1" />',
-  '<img class="monster" src="images/monsters-02.png" alt="monster2" />',
-  '<img class="monster" src="images/monsters-02.png" alt="monster2" />',
-  '<img class="monster" src="images/monsters-03.png" alt="monster3" />',
-  '<img class="monster" src="images/monsters-03.png" alt="monster3" />',
-  '<img class="monster" src="images/monsters-04.png" alt="monster4" />',
-  '<img class="monster" src="images/monsters-04.png" alt="monster4" />',
-];
+var eightPics = [];
+eightPics = fourPics.concat(fourPics);
+
+shuffledPics = _.shuffle(eightPics);
 
 //debugger
-$(function () {
-  $(".tile").click(function () {
 
+  for (var i = 0; i < shuffledPics.length; i++) {
+    $('#grid').append('<div class="tile"><img class="monster" src="images/' + shuffledPics[i] + '"><div class="back"></div></div>');
+  }
+
+  $(".tile").click(function () {
     if ($(this).hasClass("open")) {
       return;
     }
