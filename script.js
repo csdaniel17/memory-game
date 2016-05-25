@@ -3,9 +3,10 @@ var state = "first";
 var count = 0;
 var card1;
 var card2;
+
 $(function () {
-//function to shuffle cards
-var pictures = _.shuffle([
+//shuffle cards
+var pictures = [
   'monsters-01.png',
   'monsters-02.png',
   'monsters-03.png',
@@ -22,7 +23,9 @@ var pictures = _.shuffle([
   'monsters-14.png',
   'monsters-15.png',
   'monsters-16.png'
-]);
+];
+
+pictures = _.shuffle(pictures);
 
 var fourPics = [];
 fourPics = pictures.slice(0, 4);
@@ -32,8 +35,7 @@ eightPics = fourPics.concat(fourPics);
 
 shuffledPics = _.shuffle(eightPics);
 
-//debugger
-
+function shuffled() {
   for (var i = 0; i < shuffledPics.length; i++) {
     $('#grid').append('<div class="tile"><img class="monster" src="images/' + shuffledPics[i] + '"><div class="back"></div></div>');
   }
@@ -72,9 +74,13 @@ shuffledPics = _.shuffle(eightPics);
       $("#game-over").show();
     }
   });
-
+}
+shuffled();
   //reset game
   $("#new").click(function () {
+    $('#grid').html('');
+    shuffledPics = _.shuffle(eightPics);
+    shuffled();
     //reset counter
     count = 0;
     $("#num-moves").text(count);
